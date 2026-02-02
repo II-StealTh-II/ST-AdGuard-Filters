@@ -1,0 +1,53 @@
+[AdGuard]
+! Title : AdGuard PC Filters
+! Version: 2026.0202
+! Expires : 7 days
+
+!디스코드 차단 해제
+@@||discord.com^
+
+!샤나인코더 필터
+shana.pe.kr##+js(set, checkShanaBlock, noopFunc)
+
+!에펨코리아 필터
+fmkorea.com##div[id^="bd_"] > div:nth-child(5)
+fmkorea.com##div#content > div.content_dummy > aside.content_widget > section.ul
+
+!쿨엔조이 필터
+@@||photo.coolenjoy.co.kr/banner/$domain=coolenjoy.net
+coolenjoy.net#@#img[src^="https://photo.coolenjoy.co.kr/banner/"]
+||coolenjoy.net/plugin/hotkey/grz_hot_use.js$domain=coolenjoy.net
+
+!퀘이사존 필터
+quasarzone.com##div#venatusHumorTop
+
+!퀘이사존 스폰서 광고 차단 해제
+@@||img2.quasarzone.com/banner/
+@@||img2.quasarzone.co.kr/banner/
+@@||quasarzone.com/banner/
+quasarzone.com#@#div[class*="-banner-"]
+quasarzone.com#@#[class^="banner-"]
+quasarzone.com#@#[class$="-banner"]
+quasarzone.com#@#.sponsor-logo-wrap
+
+!퀘이사존 PC 차단회원 게시글 숨기기
+quasarzone.com##ul.best-content-item-list > li:has(h3:has-text(/차단된 회원 게시물입니다./))
+quasarzone.com##div.main-hotdeal-content-area > div > div > ul.main-hotdeal-list > li:has(h3:has-text(/차단된 회원 게시물입니다./))
+quasarzone.com##div.news-header-area > ul > li:has(h3:has-text(/차단된 회원 게시물입니다./))
+quasarzone.com##div.news-list-wrap > ul > li:has(h3:has-text(/차단된 회원 게시물입니다./))
+quasarzone.com##div.forum-latest-list-wrap > ul > li:has(h3:has-text(/차단된 회원 게시물입니다./))
+quasarzone.com##div.desk-flexslider > div > ul > li > div:has(h3:has-text(/차단된 회원 게시물입니다./))
+quasarzone.com##div.dabate-type-list > table > tbody > tr:has(a[href$="('차단된 회원 게시물입니다.');"])
+quasarzone.com##div.market-info-type-list > table > tbody > tr:has(a[href$="('차단된 회원 게시물입니다.');"])
+quasarzone.com##dl.list-type-a > dd > ul > li:has(a[href$="('차단된 회원 게시물입니다.');"])
+
+!퀘이사존 PC 차단회원 댓글 숨기기
+quasarzone.com##div.reply-list > ul > li:has(.van-text)
+quasarzone.com##div.best-comment-wrap > li:has(.van-text)
+quasarzone.com##div.cider-complete-wrap > li:has(.van-text)
+
+!퀘이사존 오늘의 베스트 / 유머게시판 숨기기
+quasarzone.com###best-0-contents > div > div > ul.best-content-item-list > li:has(a[href^="/bbs/qb_humor/"])
+
+!퀘이사존 오늘의 베스트 / 특정 단어가 포함된 게시글 숨기기
+!quasarzone.com##div.today-best-list-wrap > div > div > ul > li:has(h3:has-text(/단어1|단어2|단어3/i))

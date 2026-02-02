@@ -1,0 +1,22 @@
+[AdGuard]
+! Title : AdGuard Mobile Filters
+! Version: 2026.0202
+! Expires : 7 days
+
+!퀘이사존 모바일 차단회원 게시글 숨기기
+quasarzone.com#?#ul.best-item-list > li:has(h3:has-text(/차단된 회원 게시물입니다./))
+quasarzone.com#?#div.news-recent-list-wrap > ul > li:has(h3:has-text(/차단된 회원 게시물입니다./))
+quasarzone.com#?#div.news-best-list-wrap > ul > li:has(h3:has-text(/차단된 회원 게시물입니다./))
+quasarzone.com#?#div.forum-latest-list-wrap > div > div > ul > li:has(h3:has-text(/차단된 회원 게시물입니다./))
+quasarzone.com#?#div.desk-setup-list-wrapper > div > div > ul > li:has(h3:has-text(/차단된 회원 게시물입니다./))
+quasarzone.com#?#div.hotdeal-list-wrapper > div > div > ul > li:has(h3:has-text(/차단된 회원 게시물입니다./))
+quasarzone.com#?#div.content > div.list-area > div > ul > li:has(a[href$="('차단된 회원 게시물입니다.');"])
+
+!퀘이사존 모바일 차단회원 댓글 숨기기
+quasarzone.com#?#div.comment > div[class="commnet-main"]:not(:has(div.comment-user-image))
+quasarzone.com#?#div.comment > div.commnet-main.comment-reply:not(:has(div.comment-user-image))
+quasarzone.com#?#div.comment > div.commnet-main.cider-complete-wrap > div.comment-user-form:not(:has(div.comment-user-info))
+quasarzone.com#?#div.comment > div.commnet-main.best-comment-wrap:not(:has(div.comment-user-image))
+
+!퀘이사존 모바일 오늘의 베스트 / 유머게시판 숨기기
+quasarzone.com###best-0-contents > div > div > div > div.best-list-wrap > ul.best-item-list > li:has(a[href^="/bbs/qb_humor/"])
