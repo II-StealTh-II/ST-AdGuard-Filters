@@ -1,0 +1,14 @@
+name: Purge jsDelivr Cache
+
+on:
+  push:
+    paths:
+      - 'ST_AdGuard_Filters.txt'
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Purge Cache
+        run: |
+          curl -i https://purge.jsdelivr.net/gh/${{ github.repository }}@main/ST_AdGuard_Filters.txt
